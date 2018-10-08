@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+   <TextView
+       android:id="@+id/tvMsg01"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="关关雎鸠，在河之洲，窈窕淑女，君子好逑"
+       android:textSize="18sp"
+       android:layout_marginTop="5dp"
+       android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tvMsg02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btn_copy_txt01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAllCaps="false"
+        android:text="copy 关雎"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
+
+    <Button
+        android:id="@+id/btn_copy_txt02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="copy 草"
+        android:textAllCaps="false"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>
