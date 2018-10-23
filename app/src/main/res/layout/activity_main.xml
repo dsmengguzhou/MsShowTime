@@ -8,7 +8,7 @@
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
     android:paddingTop="5dp"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <Button
         android:id="@+id/btn_window_act"
@@ -35,7 +35,13 @@
         android:id="@+id/btn_wx_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="微信" />
+        android:text="微信5.2.1" />
+
+    <Button
+        android:id="@+id/btn_wx_activity_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信6.0" />
 
     <TextView
         android:id="@+id/tv_info"

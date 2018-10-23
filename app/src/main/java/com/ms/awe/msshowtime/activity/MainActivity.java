@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime;
+package com.ms.awe.msshowtime.activity;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -10,10 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.ms.awe.msshowtime.activity.CopyActivity;
-import com.ms.awe.msshowtime.activity.ProgressBarActivity;
-import com.ms.awe.msshowtime.activity.WindowActivity;
-import com.ms.awe.msshowtime.activity.WxActivity;
+import com.ms.awe.msshowtime.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnToProgressAct;
     private Button btnToCopyAct;
     private Button btnToWx;
+    private Button btnToWx6;
     private TextView tvInfo;
 
     @Override
@@ -34,17 +32,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     private void initViews() {
         btnToWindowAct = findViewById(R.id.btn_window_act);
         btnToProgressAct = findViewById(R.id.btn_progress_bar);
         btnToCopyAct = findViewById(R.id.btn_copy_activity);
         btnToWx = findViewById(R.id.btn_wx_activity);
+        btnToWx6 = findViewById(R.id.btn_wx_activity_6);
 
         btnToWindowAct.setOnClickListener(this);
         btnToProgressAct.setOnClickListener(this);
         btnToCopyAct.setOnClickListener(this);
         btnToWx.setOnClickListener(this);
+        btnToWx6.setOnClickListener(this);
 
         tvInfo = findViewById(R.id.tv_info);
     }
@@ -80,6 +79,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_wx_activity:
                 intent = new Intent(MainActivity.this, WxActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_wx_activity_6:
+                intent = new Intent(MainActivity.this, NewWxActivity.class);
+                startActivity(intent);
+                break;
             default:
                 break;
         }

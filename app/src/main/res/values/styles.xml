@@ -1,11 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:actionOverflowButtonStyle">@style/weixinActionOverflowButtonStyle</item>
+    </style>
+
+    <style name="weixinActionOverflowButtonStyle">
+        <item name="android:src">@mipmap/actionbar_add_icon</item>
     </style>
 
     <style name="Theme.FloatActivity" parent="Theme.AppCompat.Light.Dialog">

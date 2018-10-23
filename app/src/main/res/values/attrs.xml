@@ -23,5 +23,19 @@
     <declare-styleable name="RoundProgressBarWithProgress">
         <attr name="radius" format="dimension"></attr>
     </declare-styleable>
+
+
+    <!--ChangeColorIconWithText-->
+    <attr name="icon" format="reference"></attr>
+    <attr name="color" format="color"></attr>
+    <attr name="text" format="string"></attr>
+    <attr name="text_size" format="dimension"></attr>
+
+    <declare-styleable name="ChangeColorIconWithText">
+        <attr name="icon"></attr>
+        <attr name="color"></attr>
+        <attr name="text"></attr>
+        <attr name="text_size"></attr>
+    </declare-styleable>
     
 </resources>
