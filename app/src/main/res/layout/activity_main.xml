@@ -43,13 +43,11 @@
         android:layout_height="wrap_content"
         android:text="微信6.0" />
 
-    <TextView
-        android:id="@+id/tv_info"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_start_animator"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="info"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:layout_marginLeft="12dp"/>
+        android:text="开始三角形动画" />
+    
 
 </LinearLayout>

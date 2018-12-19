@@ -28,6 +28,8 @@
         <activity android:name=".activity.NewWxActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name=".activity.VideoViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

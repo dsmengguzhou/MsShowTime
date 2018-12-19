@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
+import com.ms.awe.msshowtime.widget.MyVideoView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnToCopyAct;
     private Button btnToWx;
     private Button btnToWx6;
-    private TextView tvInfo;
+    private Button btnStartAnimator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +40,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnToCopyAct = findViewById(R.id.btn_copy_activity);
         btnToWx = findViewById(R.id.btn_wx_activity);
         btnToWx6 = findViewById(R.id.btn_wx_activity_6);
+        btnStartAnimator = findViewById(R.id.btn_start_animator);
 
         btnToWindowAct.setOnClickListener(this);
         btnToProgressAct.setOnClickListener(this);
         btnToCopyAct.setOnClickListener(this);
         btnToWx.setOnClickListener(this);
         btnToWx6.setOnClickListener(this);
-
-        tvInfo = findViewById(R.id.tv_info);
+        btnStartAnimator.setOnClickListener(this);
     }
 
     private void calculate() {
@@ -56,8 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         strBuilder.append("memClass:" + memClass + "\n");
         strBuilder.append("LargememClass:" + LargememClass + "\n");
 
-        tvInfo.setText(strBuilder.toString());
-        Log.d("ms", strBuilder.toString());
     }
 
     @Override
@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_wx_activity_6:
                 intent = new Intent(MainActivity.this, NewWxActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_start_animator:
+                intent = new Intent(MainActivity.this,VideoViewActivity.class);
                 startActivity(intent);
                 break;
             default:
