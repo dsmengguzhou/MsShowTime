@@ -30,12 +30,23 @@
     <attr name="color" format="color"></attr>
     <attr name="text" format="string"></attr>
     <attr name="text_size" format="dimension"></attr>
-
     <declare-styleable name="ChangeColorIconWithText">
         <attr name="icon"></attr>
         <attr name="color"></attr>
         <attr name="text"></attr>
         <attr name="text_size"></attr>
     </declare-styleable>
-    
+
+
+    <declare-styleable name="FlodableButton">
+        <attr name="tx_size" format="float"/>              <!--字体大小-->
+        <attr name="speed" format="float"/>                 <!--折叠速度-->
+        <attr name="bac_color" format="color"/>             <!--控件背景颜色-->
+        <attr name="text_color" format="color"/>            <!--字体颜色-->
+        <attr name="inner_circle_color" format="color"/>    <!--小圆颜色-->
+        <attr name="tx" format="string"/>                 <!--文本-->
+        <attr name="open_icon" format="reference"/>         <!--展开图标-->
+        <attr name="close_icon" format="reference"/>        <!--挂壁图标-->
+        <attr name="degrees" format="float"/>               <!--图标旋转角度-->
+    </declare-styleable>
 </resources>

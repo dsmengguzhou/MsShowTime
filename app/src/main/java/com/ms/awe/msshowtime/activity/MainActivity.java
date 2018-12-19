@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
+import com.ms.awe.msshowtime.widget.FlodableButton;
 import com.ms.awe.msshowtime.widget.MyVideoView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnToWx;
     private Button btnToWx6;
     private Button btnStartAnimator;
+    private FlodableButton flodableButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnToWx = findViewById(R.id.btn_wx_activity);
         btnToWx6 = findViewById(R.id.btn_wx_activity_6);
         btnStartAnimator = findViewById(R.id.btn_start_animator);
+        flodableButton = findViewById(R.id.flodable_button);
+        flodableButton.setOnClickListener(new FlodableButton.OnClickListener() {
+            @Override
+            public void onClick(FlodableButton sfb) {
+                flodableButton.startScroll();
+            }
+        });
+        flodableButton.setFoldListener(new FlodableButton.FoldListener() {
+            @Override
+            public void onFold(boolean isIncrease, FlodableButton sfb) {
+                String text = isIncrease? "展开了":"折叠了";
+                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnToWindowAct.setOnClickListener(this);
         btnToProgressAct.setOnClickListener(this);
