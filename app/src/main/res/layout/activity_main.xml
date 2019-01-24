@@ -7,64 +7,70 @@
     android:orientation="vertical"
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
-    android:paddingTop="5dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     tools:context=".activity.MainActivity">
-
-    <com.ms.awe.msshowtime.widget.FlodableButton
-        android:id="@+id/flodable_button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:bac_color="#CA8EFF"
-        app:close_icon="@mipmap/icon_2"
-        app:inner_circle_color="@color/black"
-        app:open_icon="@mipmap/icon"
-        app:speed="60"
-        app:tx="上城／下城／拱墅／江干 / 滨江 / 萧山"
-        app:text_color="#ffffff"
-        app:text_size="16sp"
-        app:degrees="90"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
 
     <Button
         android:id="@+id/btn_window_act"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Window Activity"
+        android:text="Window Dialog"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btn_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start ProgressBar Activity"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="ProgressBar"
         android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btn_copy_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Copy Activity"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="Copy"
         android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/btn_wx_activity"
+        android:id="@+id/btn_we_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="微信5.2.1" />
-
-    <Button
-        android:id="@+id/btn_wx_activity_6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="微信6.0" />
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="@string/we_chat_wx" />
 
     <Button
         android:id="@+id/btn_start_animator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
         android:text="开始三角形动画" />
 
-
+    <com.ms.awe.msshowtime.widget.FlodableButton
+        android:id="@+id/flodable_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:bac_color="@color/red"
+        app:close_icon="@mipmap/icon_2"
+        app:inner_circle_color="@color/black"
+        app:open_icon="@mipmap/icon"
+        app:speed="60"
+        app:tx="上城/下城/拱墅/江干"
+        app:text_color="#ffffff"
+        app:text_size="16sp"
+        app:degrees="90" />
 
 </LinearLayout>

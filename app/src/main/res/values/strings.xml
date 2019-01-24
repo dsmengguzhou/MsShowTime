@@ -3,11 +3,17 @@
 
     <string name="action_search">查找</string>
     <string name="action_add">添加</string>
+
     <string name="menu_group_chat">发起群聊</string>
     <string name="menu_feedback">意见反馈</string>
     <string name="menu_addfriend">添加朋友</string>
     <string name="menu_scan">扫一扫</string>
+
     <string name="tab_contact">通讯录</string>
     <string name="tab_found">发现</string>
     <string name="tab_me">我</string>
+
+    <string name="we_chat_wx">微信</string>
+    <string name="we_chat_wx_5.0">微信5.2.1</string>
+    <string name="we_chat_wx_6.0">微信6.0.0</string>
 </resources>

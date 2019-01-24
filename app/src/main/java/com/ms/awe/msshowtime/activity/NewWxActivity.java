@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.ms.awe.msshowtime.R;
 import com.ms.awe.msshowtime.fragment.TabFragment;
@@ -21,6 +22,7 @@ public class NewWxActivity extends FragmentActivity implements View.OnClickListe
     private List<Fragment> mTabs = new ArrayList<Fragment>();
     private String[] mTitles = new String[]{"First Fragment!", "Second Fragment!", "Third Fragment!", "Fourth Fragment!"};
     private FragmentPagerAdapter mAdapter;
+    private ImageView ivTopWeChat;
 
     private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<ChangeColorIconWithText>();
 
@@ -33,16 +35,12 @@ public class NewWxActivity extends FragmentActivity implements View.OnClickListe
         initDatas();
 
         mViewPager.setAdapter(mAdapter);
-
-        initEvent();
-    }
-
-    private void initEvent() {
-        mViewPager.setOnPageChangeListener(this);
     }
 
     private void initView() {
         mViewPager = findViewById(R.id.id_viewpager_new);
+        ivTopWeChat = findViewById(R.id.iv_top_icon_we_chat);
+        ivTopWeChat.setOnClickListener(this);
 
         ChangeColorIconWithText one = findViewById(R.id.id_indicator_one);
         ChangeColorIconWithText two = findViewById(R.id.id_indicator_two);
@@ -58,6 +56,7 @@ public class NewWxActivity extends FragmentActivity implements View.OnClickListe
         two.setOnClickListener(this);
         three.setOnClickListener(this);
         four.setOnClickListener(this);
+        mViewPager.setOnPageChangeListener(this);
 
         one.setIconAlpha(1.0f);
     }
@@ -90,12 +89,16 @@ public class NewWxActivity extends FragmentActivity implements View.OnClickListe
         return true;
     }
 
-
     @Override
     public void onClick(View view) {
-
         clickTab(view);
-
+        switch (view.getId()) {
+            case R.id.iv_top_icon_we_chat:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
 
     private void clickTab(View view) {

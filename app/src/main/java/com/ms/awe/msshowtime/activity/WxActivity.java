@@ -26,7 +26,7 @@ import java.util.List;
 
 import q.rorbin.badgeview.QBadgeView;
 
-public class WxActivity extends FragmentActivity {
+public class WxActivity extends FragmentActivity implements View.OnClickListener {
 
     private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
@@ -40,6 +40,7 @@ public class WxActivity extends FragmentActivity {
 
     private int mScreen1_3;
     private ImageView mTabline;
+    private ImageView ivTopWeChat;
 
     private int mCurrentPageIndex;
 
@@ -50,6 +51,8 @@ public class WxActivity extends FragmentActivity {
 
         initTabline();
         initView();
+        initData();
+        initListener();
     }
 
     private void initView() {
@@ -57,10 +60,13 @@ public class WxActivity extends FragmentActivity {
         mChatTextView = findViewById(R.id.id_tv_chat);
         mFriendTextView = findViewById(R.id.id_tv_friend);
         mContactTextView = findViewById(R.id.id_tv_contact);
+        ivTopWeChat = findViewById(R.id.iv_top_icon_we_chat);
 
         mViewPager = findViewById(R.id.id_viewpager);
         mDatas = new ArrayList<Fragment>();
+    }
 
+    private void initData() {
         ChatMainTabFragment tab01 = new ChatMainTabFragment();
         FriendMainTabFragment tab02 = new FriendMainTabFragment();
         ContactMainTabFragment tab03 = new ContactMainTabFragment();
@@ -68,6 +74,10 @@ public class WxActivity extends FragmentActivity {
         mDatas.add(tab01);
         mDatas.add(tab02);
         mDatas.add(tab03);
+    }
+
+    private void initListener() {
+        ivTopWeChat.setOnClickListener(this);
 
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -88,22 +98,22 @@ public class WxActivity extends FragmentActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mTabline
                         .getLayoutParams();
-                if (mCurrentPageIndex == 0 && position == 0){
+                if (mCurrentPageIndex == 0 && position == 0) {
                     //0->1
                     lp.leftMargin = (int) (positionOffset * mScreen1_3
-                                                + mCurrentPageIndex * mScreen1_3);
-                }else if (mCurrentPageIndex == 1 && position == 0){
+                            + mCurrentPageIndex * mScreen1_3);
+                } else if (mCurrentPageIndex == 1 && position == 0) {
                     //1->0
                     lp.leftMargin = (int) (mCurrentPageIndex * mScreen1_3
-                                                + (positionOffset - 1)*mScreen1_3);
-                }else if (mCurrentPageIndex == 1 && position ==1){
+                            + (positionOffset - 1) * mScreen1_3);
+                } else if (mCurrentPageIndex == 1 && position == 1) {
                     //1->2
                     lp.leftMargin = (int) (mCurrentPageIndex * mScreen1_3
-                                                + positionOffset * mScreen1_3);
-                }else if (mCurrentPageIndex == 2 && position == 1){
+                            + positionOffset * mScreen1_3);
+                } else if (mCurrentPageIndex == 2 && position == 1) {
                     //2->1
                     lp.leftMargin = (int) (mCurrentPageIndex * mScreen1_3
-                                                + (positionOffset-1) * mScreen1_3);
+                            + (positionOffset - 1) * mScreen1_3);
                 }
                 mTabline.setLayoutParams(lp);
             }
@@ -154,5 +164,16 @@ public class WxActivity extends FragmentActivity {
         mChatTextView.setTextColor(Color.BLACK);
         mFriendTextView.setTextColor(Color.BLACK);
         mContactTextView.setTextColor(Color.BLACK);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_top_icon_we_chat:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
 }
