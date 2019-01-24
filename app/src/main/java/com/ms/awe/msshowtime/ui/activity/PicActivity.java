@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.activity;
+package com.ms.awe.msshowtime.ui.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

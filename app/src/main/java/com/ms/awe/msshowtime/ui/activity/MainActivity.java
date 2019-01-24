@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.activity;
+package com.ms.awe.msshowtime.ui.activity;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -14,9 +14,7 @@ import com.ms.awe.msshowtime.widget.FlodableButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnToWindowAct;
-    private Button btnToProgressAct;
-    private Button btnToCopyAct;
+    private Button btnWidgetActivity;
     private Button btnToWeChat;
     private Button btnStartAnimator;
     private FlodableButton flodableButton;
@@ -34,9 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initViews() {
-        btnToWindowAct = findViewById(R.id.btn_window_act);
-        btnToProgressAct = findViewById(R.id.btn_progress_bar);
-        btnToCopyAct = findViewById(R.id.btn_copy_activity);
+
+        btnWidgetActivity = findViewById(R.id.btn_widget_activity);
         btnToWeChat = findViewById(R.id.btn_we_chat);
         btnStartAnimator = findViewById(R.id.btn_start_animator);
         flodableButton = findViewById(R.id.flodable_button);
@@ -47,10 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initListener() {
-
-        btnToWindowAct.setOnClickListener(this);
-        btnToProgressAct.setOnClickListener(this);
-        btnToCopyAct.setOnClickListener(this);
+        btnWidgetActivity.setOnClickListener(this);
         btnToWeChat.setOnClickListener(this);
         btnStartAnimator.setOnClickListener(this);
 
@@ -82,14 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_window_act:
-                startActivity(new Intent(MainActivity.this, WindowActivity.class));
-                break;
-            case R.id.btn_progress_bar:
-                startActivity(new Intent(MainActivity.this, ProgressBarActivity.class));
-                break;
-            case R.id.btn_copy_activity:
-                startActivity(new Intent(MainActivity.this, CopyActivity.class));
+            case R.id.btn_widget_activity:
+                startActivity(new Intent(MainActivity.this, WidgetActivity.class));
                 break;
             case R.id.btn_we_chat:
                 startActivity(new Intent(MainActivity.this, WeChatActivity.class));

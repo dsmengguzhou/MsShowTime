@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    tools:context=".ui.activity.MainActivity">
+    android:paddingTop="10dp">
 
     <Button
-        android:id="@+id/btn_widget_activity"
+        android:id="@+id/btn_window_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Window"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_marginBottom="10dp"
         android:background="@drawable/btn_blue_solid_arc"
-        android:textAllCaps="false"
-        android:text="@string/main_widget"/>
+        android:text="ProgressBar"
+        android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/btn_we_chat"
+        android:id="@+id/btn_copy_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_marginBottom="10dp"
         android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/we_chat_wx" />
-
-    <Button
-        android:id="@+id/btn_start_animator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="开始三角形动画" />
-
-    <com.ms.awe.msshowtime.widget.FlodableButton
-        android:id="@+id/flodable_button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:bac_color="@color/red"
-        app:close_icon="@mipmap/icon_2"
-        app:inner_circle_color="@color/black"
-        app:open_icon="@mipmap/icon"
-        app:speed="60"
-        app:tx="上城/下城/拱墅/江干"
-        app:text_color="#ffffff"
-        app:text_size="16sp"
-        app:degrees="90" />
+        android:text="Copy"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

@@ -4,12 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"
+        <activity android:name=".ui.activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,20 +17,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.WindowActivity"
+        <activity android:name=".ui.activity.WindowActivity"
             android:theme="@style/Theme.FloatActivity"/>
-        <activity android:name=".activity.ProgressBarActivity"
+        <activity android:name=".ui.activity.ProgressBarActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".activity.CopyActivity"
+        <activity android:name=".ui.activity.CopyActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".activity.WxActivity"
+        <activity android:name=".ui.activity.WxActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".activity.NewWxActivity"
+        <activity android:name=".ui.activity.NewWxActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name=".activity.VideoViewActivity"
+        <activity android:name=".ui.activity.VideoViewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".activity.WeChatActivity"
+        <activity android:name=".ui.activity.WeChatActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ui.activity.WidgetActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 

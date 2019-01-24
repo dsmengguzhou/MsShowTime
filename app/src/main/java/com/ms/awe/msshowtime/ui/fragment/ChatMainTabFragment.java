@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.fragment;
+package com.ms.awe.msshowtime.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

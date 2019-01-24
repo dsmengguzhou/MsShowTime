@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.activity;
+package com.ms.awe.msshowtime.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.ms.awe.msshowtime.R;
-import com.ms.awe.msshowtime.fragment.TabFragment;
+import com.ms.awe.msshowtime.ui.fragment.TabFragment;
 import com.ms.awe.msshowtime.widget.ChangeColorIconWithText;
 
 import java.util.ArrayList;

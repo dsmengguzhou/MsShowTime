@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.fragment;
+package com.ms.awe.msshowtime.ui.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;

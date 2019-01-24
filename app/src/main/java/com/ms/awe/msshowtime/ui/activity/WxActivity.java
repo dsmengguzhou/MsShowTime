@@ -1,4 +1,4 @@
-package com.ms.awe.msshowtime.activity;
+package com.ms.awe.msshowtime.ui.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
@@ -17,9 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ms.awe.msshowtime.R;
-import com.ms.awe.msshowtime.fragment.ChatMainTabFragment;
-import com.ms.awe.msshowtime.fragment.ContactMainTabFragment;
-import com.ms.awe.msshowtime.fragment.FriendMainTabFragment;
+import com.ms.awe.msshowtime.ui.fragment.ChatMainTabFragment;
+import com.ms.awe.msshowtime.ui.fragment.ContactMainTabFragment;
+import com.ms.awe.msshowtime.ui.fragment.FriendMainTabFragment;
 
 import java.util.ArrayList;
 import java.util.List;
