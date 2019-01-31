@@ -12,6 +12,16 @@
     tools:context=".ui.activity.MainActivity">
 
     <Button
+        android:id="@+id/btn_material_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:textAllCaps="false"
+        android:text="@string/main_material_design"/>
+
+    <Button
         android:id="@+id/btn_widget_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

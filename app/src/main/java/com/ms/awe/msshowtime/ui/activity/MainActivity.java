@@ -14,6 +14,7 @@ import com.ms.awe.msshowtime.widget.FlodableButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button btnMDActivity;
     private Button btnWidgetActivity;
     private Button btnToWeChat;
     private Button btnStartAnimator;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initViews();
-        initData();
         initListener();
         calculate();
 
@@ -33,17 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initViews() {
 
+        btnMDActivity = findViewById(R.id.btn_material_design);
         btnWidgetActivity = findViewById(R.id.btn_widget_activity);
         btnToWeChat = findViewById(R.id.btn_we_chat);
         btnStartAnimator = findViewById(R.id.btn_start_animator);
         flodableButton = findViewById(R.id.flodable_button);
     }
 
-    private void initData() {
-
-    }
-
     private void initListener() {
+        btnMDActivity.setOnClickListener(this);
         btnWidgetActivity.setOnClickListener(this);
         btnToWeChat.setOnClickListener(this);
         btnStartAnimator.setOnClickListener(this);
@@ -70,12 +68,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int LargememClass = activityManager.getLargeMemoryClass();  //以M为单位
         strBuilder.append("memClass:" + memClass + "\n");
         strBuilder.append("LargememClass:" + LargememClass + "\n");
-
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_material_design:
+                startActivity(new Intent(MainActivity.this, MDActivity.class));
+                break;
             case R.id.btn_widget_activity:
                 startActivity(new Intent(MainActivity.this, WidgetActivity.class));
                 break;
