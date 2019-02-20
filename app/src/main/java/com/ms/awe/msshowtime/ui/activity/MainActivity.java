@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
 import com.ms.awe.msshowtime.widget.FlodableButton;
+import com.ms.awe.msshowtime.widget.guide.HoleBean;
+import com.ms.awe.msshowtime.widget.guide.NewbieGuideManager;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,7 +30,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initViews();
         initListener();
         calculate();
+    }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(NewbieGuideManager.isNeverShowed(this, NewbieGuideManager.TYPE_MS)) {
+            new NewbieGuideManager(this, NewbieGuideManager.TYPE_MS).addView(btnMDActivity, HoleBean.TYPE_RECTANGLE).show();
+        }
     }
 
     private void initViews() {
