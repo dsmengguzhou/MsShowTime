@@ -1,60 +1,53 @@
 package com.ms.awe.msshowtime.ui.activity;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
+import com.ms.awe.msshowtime.mvp.model.entity.Book;
+import com.ms.awe.msshowtime.mvp.presenter.BookPresenter;
+import com.ms.awe.msshowtime.mvp.view.BookView;
 import com.ms.awe.msshowtime.widget.FlodableButton;
 import com.ms.awe.msshowtime.widget.guide.HoleBean;
 import com.ms.awe.msshowtime.widget.guide.NewbieGuideManager;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnMDActivity;
-    private Button btnWidgetActivity;
-    private Button btnToWeChat;
-    private Button btnStartAnimator;
+    @BindView(R.id.btn_material_design)
+    Button btnMdActivity;
+    @BindView(R.id.btn_widget_activity)
+    Button btnWidgetActivity;
+    @BindView(R.id.btn_we_chat)
+    Button btnWeChat;
+    @BindView(R.id.btn_start_animator)
+    Button btnStartAnimator;
+    @BindView(R.id.btn_retrofit_request)
+    Button btnRetrofitRequest;
+    @BindView(R.id.tv_retrofit_request)
+    TextView tvRetrofitRequest;
+
     private FlodableButton flodableButton;
+    private BookPresenter mBookPresenter = new BookPresenter(this);
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        unbinder = ButterKnife.bind(this);              //返回一个Unbinder对象
 
-        initViews();
-        initListener();
-        calculate();
-    }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if(NewbieGuideManager.isNeverShowed(this, NewbieGuideManager.TYPE_MS)) {
-            new NewbieGuideManager(this, NewbieGuideManager.TYPE_MS).addView(btnMDActivity, HoleBean.TYPE_RECTANGLE).show();
-        }
-    }
-
-    private void initViews() {
-
-        btnMDActivity = findViewById(R.id.btn_material_design);
-        btnWidgetActivity = findViewById(R.id.btn_widget_activity);
-        btnToWeChat = findViewById(R.id.btn_we_chat);
-        btnStartAnimator = findViewById(R.id.btn_start_animator);
         flodableButton = findViewById(R.id.flodable_button);
-    }
-
-    private void initListener() {
-        btnMDActivity.setOnClickListener(this);
-        btnWidgetActivity.setOnClickListener(this);
-        btnToWeChat.setOnClickListener(this);
-        btnStartAnimator.setOnClickListener(this);
-
         flodableButton.setOnClickListener(new FlodableButton.OnClickListener() {
             @Override
             public void onClick(FlodableButton sfb) {
@@ -68,18 +61,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
-    private void calculate() {
-        StringBuilder strBuilder = new StringBuilder();
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        int memClass = activityManager.getMemoryClass();    //以兆为单位
-        int LargememClass = activityManager.getLargeMemoryClass();  //以M为单位
-        strBuilder.append("memClass:" + memClass + "\n");
-        strBuilder.append("LargememClass:" + LargememClass + "\n");
+        mBookPresenter.onCreate();
+        mBookPresenter.attachView(mBookView);
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (NewbieGuideManager.isNeverShowed(this, NewbieGuideManager.TYPE_MS)) {
+            new NewbieGuideManager(this, NewbieGuideManager.TYPE_MS).addView(btnMdActivity, HoleBean.TYPE_RECTANGLE).show();
+        }
+    }
+
+    @OnClick({R.id.btn_material_design,R.id.btn_widget_activity,R.id.btn_we_chat,
+            R.id.btn_retrofit_request,R.id.btn_start_animator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_material_design:
@@ -94,8 +90,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_start_animator:
                 startActivity(new Intent(MainActivity.this, VideoViewActivity.class));
                 break;
+            case R.id.btn_retrofit_request:
+                mBookPresenter.getSearchBooks("金瓶梅",null,0,1);
+                break;
             default:
                 break;
         }
+    }
+
+    private BookView mBookView = new BookView() {
+        @Override
+        public void onSuccess(Book mBook) {
+            tvRetrofitRequest.setText(mBook.toString());
+            Log.e("musixiaoge",mBook.toString());
+        }
+
+        @Override
+        public void onError(String result) {
+            Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if (unbinder != null){
+            unbinder.unbind();
+        }
+        mBookPresenter.onStop();
     }
 }

@@ -3,6 +3,7 @@
 
     <string name="main_widget">功能</string>
     <string name="main_material_design">Material Design</string>
+    <string name="main_request_retrofit">Retrofit Request</string>
 
     <string name="action_search">查找</string>
     <string name="action_add">添加</string>
