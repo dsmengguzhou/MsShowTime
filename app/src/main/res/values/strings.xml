@@ -4,6 +4,9 @@
     <string name="main_widget">功能</string>
     <string name="main_material_design">Material Design</string>
     <string name="main_request_retrofit">Retrofit Request</string>
+    <string name="main_book_title"><Data><![CDATA[书名:<font color="#999999">%s</font>]]></Data></string>
+    <string name="main_book_author"><Data><![CDATA[作者:<font color="#999999">%s</font>]]></Data></string>
+    <string name="main_book_publisher"><Data><![CDATA[出版社:<font color="#999999">%s</font>]]></Data></string>
 
     <string name="action_search">查找</string>
     <string name="action_add">添加</string>

@@ -4,83 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_bg"
     android:orientation="vertical"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
+    android:padding="12dp"
     tools:context=".ui.activity.MainActivity">
-
-    <Button
-        android:id="@+id/btn_material_design"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:textAllCaps="false"
-        android:text="@string/main_material_design"/>
-
-    <Button
-        android:id="@+id/btn_widget_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:textAllCaps="false"
-        android:text="@string/main_widget"/>
-
-    <Button
-        android:id="@+id/btn_we_chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/we_chat_wx" />
-
-    <Button
-        android:id="@+id/btn_start_animator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="开始三角形动画" />
 
     <com.ms.awe.msshowtime.widget.FlodableButton
         android:id="@+id/flodable_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:bac_color="@color/red"
-        app:close_icon="@mipmap/icon_2"
         android:layout_marginBottom="10dp"
+        app:bac_color="@color/orange"
+        app:close_icon="@mipmap/icon_2"
+        app:degrees="90"
         app:inner_circle_color="@color/black"
         app:open_icon="@mipmap/icon"
         app:speed="60"
-        app:tx="上城/下城/拱墅/江干"
         app:text_color="#ffffff"
         app:text_size="16sp"
-        app:degrees="90" />
+        app:tx="上城/下城/拱墅/江干" />
+
+    <Button
+        android:id="@+id/btn_material_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="@string/main_material_design"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_widget_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="@string/main_widget"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_we_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="@string/we_chat_wx"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_start_animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="开始三角形动画"
+        android:textColor="@color/white" />
+
 
     <Button
         android:id="@+id/btn_retrofit_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/btn_blue_solid_arc"
+        android:text="@string/main_request_retrofit"
         android:textAllCaps="false"
-        android:text="@string/main_request_retrofit"/>
+        android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/tv_retrofit_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
+    <RelativeLayout
+        android:id="@+id/ll_item_book"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/btn_white_solid_arc"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll_book_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/iv_left_img"
+            android:orientation="vertical"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_book_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/word_black_gray"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/word_black_gray"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_book_publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/word_black_gray"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close_item"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            android:src="@mipmap/icon_logo" />
+    </RelativeLayout>
 
 </LinearLayout>

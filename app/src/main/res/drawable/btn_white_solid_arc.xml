@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!--focus state & pressed state -->
-    <item android:drawable="@drawable/btn_green_solid_arc_selected" android:state_focused="true"/>
-    <item android:drawable="@drawable/btn_green_solid_arc_selected" android:state_pressed="true"/>
-    <item android:drawable="@drawable/btn_green_solid_arc_selected" android:state_selected="true"/>
+    <item android:drawable="@drawable/btn_white_solid_arc_selected" android:state_focused="true"/>
+    <item android:drawable="@drawable/btn_white_solid_arc_selected" android:state_pressed="true"/>
+    <item android:drawable="@drawable/btn_white_solid_arc_selected" android:state_selected="true"/>
     <!--default state-->
-    <item android:drawable="@drawable/btn_green_solid_arc_bg"/>
+    <item android:drawable="@drawable/btn_white_solid_arc_bg"/>
 </selector>

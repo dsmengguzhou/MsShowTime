@@ -3,12 +3,17 @@ package com.ms.awe.msshowtime.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.ms.awe.msshowtime.R;
 import com.ms.awe.msshowtime.mvp.model.entity.Book;
 import com.ms.awe.msshowtime.mvp.presenter.BookPresenter;
@@ -24,6 +29,8 @@ import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @BindView(R.id.ll_item_book)
+    RelativeLayout llItemBook;
     @BindView(R.id.btn_material_design)
     Button btnMdActivity;
     @BindView(R.id.btn_widget_activity)
@@ -34,8 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnStartAnimator;
     @BindView(R.id.btn_retrofit_request)
     Button btnRetrofitRequest;
-    @BindView(R.id.tv_retrofit_request)
-    TextView tvRetrofitRequest;
+    @BindView(R.id.tv_book_title)
+    TextView tvBookTitle;
+    @BindView(R.id.tv_book_author)
+    TextView tvBookAuthor;
+    @BindView(R.id.tv_book_publisher)
+    TextView tvBookPublisher;
+    @BindView(R.id.iv_left_img)
+    ImageView ivLeftImg;
+    @BindView(R.id.iv_close_item)
+    ImageView ivCloseItem;
 
     private FlodableButton flodableButton;
     private BookPresenter mBookPresenter = new BookPresenter(this);
@@ -74,8 +89,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @OnClick({R.id.btn_material_design,R.id.btn_widget_activity,R.id.btn_we_chat,
-            R.id.btn_retrofit_request,R.id.btn_start_animator})
+    @OnClick({R.id.btn_material_design, R.id.btn_widget_activity, R.id.btn_we_chat,
+            R.id.btn_retrofit_request, R.id.btn_start_animator, R.id.ll_item_book,
+            R.id.iv_close_item})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_material_design:
@@ -91,7 +107,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, VideoViewActivity.class));
                 break;
             case R.id.btn_retrofit_request:
-                mBookPresenter.getSearchBooks("金瓶梅",null,0,1);
+                mBookPresenter.getSearchBooks("金瓶梅", null, 0, 1);
+                llItemBook.setVisibility(View.VISIBLE);
+                break;
+            case R.id.ll_item_book:
+                Toast.makeText(MainActivity.this, "想看书吗小老弟", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.iv_close_item:
+                llItemBook.setVisibility(View.GONE);
                 break;
             default:
                 break;
@@ -101,8 +124,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BookView mBookView = new BookView() {
         @Override
         public void onSuccess(Book mBook) {
-            tvRetrofitRequest.setText(mBook.toString());
-            Log.e("musixiaoge",mBook.toString());
+            Log.e("musixiaoge", mBook.toString());
+            tvBookTitle.setText(Html.fromHtml(getString(R.string.main_book_title,mBook.getBooks().get(0).getTitle())));
+            tvBookAuthor.setText(Html.fromHtml(getString(R.string.main_book_author,mBook.getBooks().get(0).getAuthor())));
+            tvBookPublisher.setText(Html.fromHtml(getString(R.string.main_book_publisher,mBook.getBooks().get(0).getPublisher())));
+            Glide.with(MainActivity.this)
+                    .load(mBook.getBooks().get(0).getImages().getSmall())
+                    .override(1000,500)
+                    .into(ivLeftImg);
         }
 
         @Override
@@ -112,9 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
-        if (unbinder != null){
+        if (unbinder != null) {
             unbinder.unbind();
         }
         mBookPresenter.onStop();

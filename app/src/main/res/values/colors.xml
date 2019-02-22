@@ -15,5 +15,9 @@
     <color name="light_blue">#2894FF</color>
     <color name="pink">#FFF0EB</color>
     <color name="orange">#f17336</color>
+    <color name="white_gray">#fff5f5f5</color>
+
+    <color name="main_bg">#F3F3FA</color>
+    <color name="word_black_gray">#999999</color>
 
 </resources>
