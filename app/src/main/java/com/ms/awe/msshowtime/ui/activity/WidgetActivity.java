@@ -9,37 +9,35 @@ import android.widget.Button;
 
 import com.ms.awe.msshowtime.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+
 /**
  * Created By Musi
  * on 2019/1/24
  */
 public class WidgetActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnToWindowAct;
-    private Button btnToProgressAct;
-    private Button btnToCopyAct;
+    @BindView(R.id.btn_window_activity)
+    Button btnToWindow;
+    @BindView(R.id.btn_progress_bar)
+    Button btnProgressBar;
+    @BindView(R.id.btn_copy_activity)
+    Button btnCopy;
+
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_widget);
 
-        initViews();
-        initListener();
+        unbinder = ButterKnife.bind(this);
     }
 
-    private void initViews() {
-        btnToWindowAct = findViewById(R.id.btn_window_activity);
-        btnToProgressAct = findViewById(R.id.btn_progress_bar);
-        btnToCopyAct = findViewById(R.id.btn_copy_activity);
-    }
-
-    private void initListener() {
-        btnToWindowAct.setOnClickListener(this);
-        btnToProgressAct.setOnClickListener(this);
-        btnToCopyAct.setOnClickListener(this);
-    }
-
+    @OnClick({R.id.btn_window_activity, R.id.btn_progress_bar, R.id.btn_copy_activity})
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -54,6 +52,14 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (unbinder != null) {
+            unbinder.unbind();
         }
     }
 }

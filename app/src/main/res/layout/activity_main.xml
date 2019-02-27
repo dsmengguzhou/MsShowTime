@@ -76,10 +76,10 @@
     <RelativeLayout
         android:id="@+id/ll_item_book"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="240dp"
         android:background="@drawable/btn_white_solid_arc"
-        android:gravity="center_vertical"
-        android:padding="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:visibility="gone">
 
         <ImageView
@@ -91,7 +91,6 @@
             android:id="@+id/ll_book_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:layout_toRightOf="@id/iv_left_img"
             android:orientation="vertical"
             android:paddingRight="12dp">
@@ -102,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/word_black_gray"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_book_author"
@@ -110,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/word_black_gray"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_book_publisher"
@@ -118,15 +117,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/word_black_gray"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/iv_close_item"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentRight="true"
-            android:layout_margin="12dp"
+            android:layout_marginRight="12dp"
             android:src="@mipmap/icon_logo" />
     </RelativeLayout>
 

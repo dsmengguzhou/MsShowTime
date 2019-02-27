@@ -18,4 +18,29 @@
         <item name="android:windowBackground">@drawable/float_box</item>
     </style>
 
+    <declare-styleable name="MsTabLayout">
+        <attr name="msIndicatorHeight" format="dimension" />
+        <attr name="msIndicatorColor" format="color" />
+        <attr name="msCenterAlign" format="boolean" />
+        <attr name="msAnimatedIndicator" format="enum">
+            <enum name="dachshund" value="0" />
+            <enum name="pointMove" value="1" />
+            <enum name="lineMove" value="2" />
+            <enum name="pointFade" value="3" />
+            <enum name="lineFade" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="VideoPlayButton">
+        <attr name="bg_color" format="color"/>
+        <attr name="btn_color" format="color"/>
+        <attr name="gap_width" format="dimension|reference"/>
+        <attr name="space_padding" format="dimension|reference"/>
+        <attr name="anim_duration" format="integer"/>
+        <attr name="anim_direction">
+            <enum name="positive" value="1"/>
+            <enum name="negative" value="2"/>
+        </attr>
+    </declare-styleable>
+
 </resources>

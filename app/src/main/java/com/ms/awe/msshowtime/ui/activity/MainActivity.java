@@ -129,8 +129,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvBookAuthor.setText(Html.fromHtml(getString(R.string.main_book_author,mBook.getBooks().get(0).getAuthor())));
             tvBookPublisher.setText(Html.fromHtml(getString(R.string.main_book_publisher,mBook.getBooks().get(0).getPublisher())));
             Glide.with(MainActivity.this)
-                    .load(mBook.getBooks().get(0).getImages().getSmall())
-                    .override(1000,500)
+                    .load(mBook.getBooks().get(0).getImages().getLarge())
+                    .override(1000,650)
                     .into(ivLeftImg);
         }
 
