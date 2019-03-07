@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnWidgetActivity;
     @BindView(R.id.btn_we_chat)
     Button btnWeChat;
-    @BindView(R.id.btn_start_animator)
-    Button btnStartAnimator;
     @BindView(R.id.btn_retrofit_request)
     Button btnRetrofitRequest;
     @BindView(R.id.tv_book_title)
@@ -90,8 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @OnClick({R.id.btn_material_design, R.id.btn_widget_activity, R.id.btn_we_chat,
-            R.id.btn_retrofit_request, R.id.btn_start_animator, R.id.ll_item_book,
-            R.id.iv_close_item})
+            R.id.btn_retrofit_request, R.id.ll_item_book, R.id.iv_close_item})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_material_design:
@@ -102,9 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_we_chat:
                 startActivity(new Intent(MainActivity.this, WeChatActivity.class));
-                break;
-            case R.id.btn_start_animator:
-                startActivity(new Intent(MainActivity.this, VideoViewActivity.class));
                 break;
             case R.id.btn_retrofit_request:
                 mBookPresenter.getSearchBooks("金瓶梅", null, 0, 1);
@@ -130,8 +124,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvBookPublisher.setText(Html.fromHtml(getString(R.string.main_book_publisher,mBook.getBooks().get(0).getPublisher())));
             Glide.with(MainActivity.this)
                     .load(mBook.getBooks().get(0).getImages().getLarge())
-                    .override(1000,650)
+                    .override(600,390)
                     .into(ivLeftImg);
+
         }
 
         @Override

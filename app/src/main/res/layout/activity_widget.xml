@@ -37,4 +37,32 @@
         android:text="Copy"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/btn_ball_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="Ball"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_start_animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="开始三角形动画"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_color_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="霓虹灯"
+        android:textColor="@color/white" />
+
 </LinearLayout>

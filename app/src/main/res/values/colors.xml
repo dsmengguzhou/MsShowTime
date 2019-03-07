@@ -20,4 +20,10 @@
     <color name="main_bg">#F3F3FA</color>
     <color name="word_black_gray">#999999</color>
 
+    <color name="color1">#f00</color>
+    <color name="color2">#0f0</color>
+    <color name="color3">#00f</color>
+    <color name="color4">#ff0</color>
+    <color name="color5">#f0f</color>
+    <color name="color6">#0ff</color>
 </resources>
