@@ -24,6 +24,15 @@
         app:text_size="16sp"
         app:tx="上城/下城/拱墅/江干" />
 
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"/>
+
     <Button
         android:id="@+id/btn_material_design"
         android:layout_width="match_parent"
@@ -52,9 +61,6 @@
         android:background="@drawable/btn_blue_solid_arc"
         android:text="@string/we_chat_wx"
         android:textColor="@color/white" />
-
-
-
 
     <Button
         android:id="@+id/btn_retrofit_request"
@@ -122,5 +128,10 @@
             android:layout_marginRight="12dp"
             android:src="@mipmap/icon_logo" />
     </RelativeLayout>
+
+    <AnalogClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
