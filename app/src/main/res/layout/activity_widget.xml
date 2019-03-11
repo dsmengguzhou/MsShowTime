@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
     android:paddingTop="10dp">
+
+    <com.ms.awe.msshowtime.widget.FlodableButton
+        android:id="@+id/flodable_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        app:bac_color="@color/orange"
+        app:close_icon="@mipmap/icon_2"
+        app:degrees="90"
+        app:inner_circle_color="@color/black"
+        app:open_icon="@mipmap/icon"
+        app:speed="60"
+        app:text_color="#ffffff"
+        app:text_size="16sp"
+        app:tx="上城/下城/拱墅/江干" />
 
     <Button
         android:id="@+id/btn_window_activity"
@@ -63,6 +79,16 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/btn_blue_solid_arc"
         android:text="霓虹灯"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_list_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_blue_solid_arc"
+        android:text="ListView"
         android:textColor="@color/white" />
 
 </LinearLayout>

@@ -4,34 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
+    android:background="#FFD2D2	"
     android:orientation="vertical"
     android:padding="12dp"
     tools:context=".ui.activity.MainActivity">
 
-    <com.ms.awe.msshowtime.widget.FlodableButton
-        android:id="@+id/flodable_button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="10dp"
-        app:bac_color="@color/orange"
-        app:close_icon="@mipmap/icon_2"
-        app:degrees="90"
-        app:inner_circle_color="@color/black"
-        app:open_icon="@mipmap/icon"
-        app:speed="60"
-        app:text_color="#ffffff"
-        app:text_size="16sp"
-        app:tx="上城/下城/拱墅/江干" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <TextClock
+        <AutoCompleteTextView
+            android:id="@+id/auto"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:completionThreshold="1"
+            android:popupBackground="#F1E1FF"/>
+
+        <Button
+            android:id="@+id/btn_auto_confirm"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:text="Find"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_blue_solid_arc"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
+    <AnalogClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:id="@+id/btn_cm_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="start"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_material_design"
@@ -85,7 +123,7 @@
             android:id="@+id/iv_left_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp" />
 
         <LinearLayout
             android:id="@+id/ll_book_desc"
@@ -128,10 +166,5 @@
             android:layout_marginRight="12dp"
             android:src="@mipmap/icon_logo" />
     </RelativeLayout>
-
-    <AnalogClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
