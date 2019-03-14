@@ -25,29 +25,19 @@
         </activity>
         <activity android:name=".ui.activity.WindowActivity"
             android:theme="@style/Theme.FloatActivity"/>
-        <activity android:name=".ui.activity.ProgressBarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.CopyActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.WxActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ui.activity.ProgressBarActivity" />
+        <activity android:name=".ui.activity.CopyActivity" />
+        <activity android:name=".ui.activity.WxActivity" />
         <activity android:name=".ui.activity.NewWxActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name=".ui.activity.VideoViewActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.WeChatActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.WidgetActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.MDActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.BallActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.ColorActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".ui.activity.ListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ui.activity.VideoViewActivity" />
+        <activity android:name=".ui.activity.WeChatActivity" />
+        <activity android:name=".ui.activity.WidgetActivity" />
+        <activity android:name=".ui.activity.MDActivity" />
+        <activity android:name=".ui.activity.BallActivity" />
+        <activity android:name=".ui.activity.ColorActivity" />
+        <activity android:name=".ui.activity.ListActivity" />
     </application>
 
 </manifest>
