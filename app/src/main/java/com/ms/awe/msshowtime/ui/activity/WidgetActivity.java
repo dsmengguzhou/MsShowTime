@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
@@ -36,6 +37,8 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
     Button btnColorActivity;
     @BindView(R.id.btn_list_activity)
     Button btnListActivity;
+    @BindView(R.id.btn_back)
+    RelativeLayout btnBack;
 
     private FlodableButton flodableButton;
     private Unbinder unbinder;
@@ -58,15 +61,12 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
             public void onFold(boolean isIncrease, FlodableButton sfb) {
                 String text = isIncrease ? "展开了" : "折叠了";
                 Toast.makeText(WidgetActivity.this, text, Toast.LENGTH_SHORT).show();
-                if (!isIncrease){
-                    finish();
-                }
             }
         });
     }
 
     @OnClick({R.id.btn_window_activity, R.id.btn_progress_bar, R.id.btn_copy_activity, R.id.btn_ball_activity,
-            R.id.btn_start_animator, R.id.btn_color_activity,R.id.btn_list_activity})
+            R.id.btn_start_animator, R.id.btn_color_activity,R.id.btn_list_activity,R.id.btn_back})
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -90,6 +90,9 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_list_activity:
                 startActivity(new Intent(WidgetActivity.this, ListActivity.class));
+                break;
+            case R.id.btn_back:
+                finish();
                 break;
             default:
                 break;

@@ -2,8 +2,10 @@ package com.ms.awe.msshowtime.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 import java.lang.reflect.Field;
 
@@ -26,6 +28,14 @@ public class ScreenUtils {
 
     public static int dpToPx(Context context, int dp) {
         return (int) (dp * context.getResources().getDisplayMetrics().density);
+    }
+
+    public static int pxToDp(float px) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, px, Resources.getSystem().getDisplayMetrics());
+    }
+
+    public static int dpToPx(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
     }
 
     /**

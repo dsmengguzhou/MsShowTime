@@ -9,12 +9,11 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.ms.awe.msshowtime.utils.PixelUtil;
+import com.ms.awe.msshowtime.utils.ScreenUtils;
 
 /**
  * Created By Musi
@@ -28,7 +27,7 @@ public class IndexLayout extends FrameLayout {
     private int circleColor = 0xaaa1a3a6;
     private int circleTextColor = Color.WHITE;      //绘制圆内文字颜色
     private int circleTextSize = 80;
-    private int indexBarWidth = PixelUtil.dpToPx(30);
+    private int indexBarWidth = ScreenUtils.dpToPx(30);
 
     private Paint mPaint;               //绘制圆
     private Paint mTxtPaint;            //绘制文字

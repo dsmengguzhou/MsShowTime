@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFD2D2	"
     android:orientation="vertical"
-    android:padding="12dp"
-    tools:context=".ui.activity.MainActivity">
+    tools:context=".ui.activity.MainActivity"
+    android:gravity="center_horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
 
         <AutoCompleteTextView
             android:id="@+id/auto"
@@ -41,41 +42,21 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="15dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextClock
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
+        android:textColor="@color/black"
         android:layout_marginBottom="10dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <TextClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <Chronometer
-            android:id="@+id/chronometer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp" />
-
-        <Button
-            android:id="@+id/btn_cm_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="start"
-            android:textAllCaps="false" />
-
-    </LinearLayout>
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btn_material_design"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:background="@drawable/btn_blue_solid_arc"
         android:text="@string/main_material_design"
         android:textAllCaps="false"
@@ -86,6 +67,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:background="@drawable/btn_blue_solid_arc"
         android:text="@string/main_widget"
         android:textAllCaps="false"
@@ -96,75 +79,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:background="@drawable/btn_blue_solid_arc"
         android:text="@string/we_chat_wx"
         android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/btn_retrofit_request"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/main_request_retrofit"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
-
-    <RelativeLayout
-        android:id="@+id/ll_item_book"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@drawable/btn_white_solid_arc"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/iv_left_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp" />
-
-        <LinearLayout
-            android:id="@+id/ll_book_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iv_left_img"
-            android:orientation="vertical"
-            android:paddingRight="12dp">
-
-            <TextView
-                android:id="@+id/tv_book_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textColor="@color/word_black_gray"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_book_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textColor="@color/word_black_gray"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_book_publisher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:textColor="@color/word_black_gray"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_close_item"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="12dp"
-            android:src="@mipmap/icon_logo" />
-    </RelativeLayout>
 
 </LinearLayout>

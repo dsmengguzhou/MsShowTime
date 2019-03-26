@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.ms.awe.msshowtime.R;
 
@@ -58,9 +56,7 @@ public class WeChatActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(WeChatActivity.this, NewWxActivity.class));
                 break;
             case R.id.iv_we_chat:
-                Toast toast = Toast.makeText(WeChatActivity.this,"面对疾风吧~",Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
-                toast.show();
+                finish();
                 break;
             default:
                 break;
