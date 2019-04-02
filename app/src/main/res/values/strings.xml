@@ -23,4 +23,14 @@
     <string name="we_chat_wx">微信</string>
     <string name="we_chat_wx_5.0">微信5.2.1</string>
     <string name="we_chat_wx_6.0">微信6.0.0</string>
+
+    <string name="drug_store">药店</string>
+
+    <string name="home">首页</string>
+
+    <string name="classify">分类</string>
+
+    <string name="discover">发现</string>
+
+    <string name="mine">我的</string>
 </resources>

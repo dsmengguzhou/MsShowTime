@@ -4,85 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.activity.MainActivity"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-        <AutoCompleteTextView
-            android:id="@+id/auto"
-            android:layout_width="0dp"
-            android:layout_weight="8"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:completionThreshold="1"
-            android:popupBackground="#F1E1FF"/>
-
-        <Button
-            android:id="@+id/btn_auto_confirm"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="30dp"
-            android:textColor="@color/white"
-            android:text="Find"
-            android:textAllCaps="false"
-            android:background="@drawable/btn_blue_solid_arc"
-            android:layout_marginLeft="2dp"/>
-    </LinearLayout>
-
-    <AnalogClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dp"/>
-
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:format12Hour="yyyy年MM月dd日 H:mma EEEE"
-        android:textColor="@color/black"
-        android:layout_marginBottom="10dp"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/btn_material_design"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/main_material_design"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/btn_widget_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/main_widget"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/btn_we_chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/btn_blue_solid_arc"
-        android:text="@string/we_chat_wx"
-        android:textColor="@color/white" />
+        android:layout_height="60dp"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/orange"
+        app:tabTextColor="@color/word_black_gray" />
 
 </LinearLayout>

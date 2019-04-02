@@ -38,6 +38,7 @@
         <activity android:name=".ui.activity.BallActivity" />
         <activity android:name=".ui.activity.ColorActivity" />
         <activity android:name=".ui.activity.ListActivity" />
+        <activity android:name=".ui.activity.DrugActivity" />
     </application>
 
 </manifest>
