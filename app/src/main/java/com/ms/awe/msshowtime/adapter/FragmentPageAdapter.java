@@ -1,9 +1,16 @@
 package com.ms.awe.msshowtime.adapter;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.ms.awe.msshowtime.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +22,11 @@ import java.util.List;
 public class FragmentPageAdapter extends android.support.v4.app.FragmentPagerAdapter{
 
     private List<Fragment> fragmentList;
-    private List<String> titleList;
+    private String[] titles = {"首页","分类","发现","我的"};
+    private Context context;
 
-    public FragmentPageAdapter(FragmentManager fm, ArrayList<String> titleList,ArrayList<Fragment> fragmentList) {
+    public FragmentPageAdapter(FragmentManager fm,ArrayList<Fragment> fragmentList) {
         super(fm);
-        this.titleList = titleList;
         this.fragmentList = fragmentList;
     }
 
@@ -46,6 +53,6 @@ public class FragmentPageAdapter extends android.support.v4.app.FragmentPagerAda
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return titleList.get(position);
+        return titles[position];
     }
 }

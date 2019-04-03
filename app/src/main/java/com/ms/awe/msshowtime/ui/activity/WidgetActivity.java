@@ -82,9 +82,6 @@ public class WidgetActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_ball_activity:
                 startActivity(new Intent(WidgetActivity.this, BallActivity.class));
                 break;
-            case R.id.btn_start_animator:
-                startActivity(new Intent(WidgetActivity.this, VideoViewActivity.class));
-                break;
             case R.id.btn_color_activity:
                 startActivity(new Intent(WidgetActivity.this, ColorActivity.class));
                 break;

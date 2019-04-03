@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Mr.Jay</string>
+    <string name="app_name">Mr.JG</string>
+    <string name="welcome">Welcome to Mr.JG</string>
+    <string name="home">首页</string>
+
+    <string name="classify">分类</string>
+
+    <string name="discover">发现</string>
+
+    <string name="mine">我的</string>
 
     <string name="main_widget">功能</string>
     <string name="main_material_design">Material Design</string>
@@ -8,29 +16,7 @@
     <string name="main_book_author"><Data><![CDATA[作者:<font color="#999999">%s</font>]]></Data></string>
     <string name="main_book_publisher"><Data><![CDATA[出版社:<font color="#999999">%s</font>]]></Data></string>
 
-    <string name="action_search">查找</string>
-    <string name="action_add">添加</string>
-
-    <string name="menu_group_chat">发起群聊</string>
-    <string name="menu_feedback">意见反馈</string>
-    <string name="menu_addfriend">添加朋友</string>
-    <string name="menu_scan">扫一扫</string>
-
-    <string name="tab_contact">通讯录</string>
-    <string name="tab_found">发现</string>
-    <string name="tab_me">我</string>
-
-    <string name="we_chat_wx">微信</string>
-    <string name="we_chat_wx_5.0">微信5.2.1</string>
-    <string name="we_chat_wx_6.0">微信6.0.0</string>
-
     <string name="drug_store">药店</string>
 
-    <string name="home">首页</string>
 
-    <string name="classify">分类</string>
-
-    <string name="discover">发现</string>
-
-    <string name="mine">我的</string>
 </resources>
