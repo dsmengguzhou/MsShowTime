@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <android.support.v4.view.ViewPager
@@ -15,9 +14,8 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs_layout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="@color/orange"
-        app:tabTextColor="@color/word_black_gray" />
+        android:layout_height="50dp"
+        android:background="@color/light_orange"
+        app:tabSelectedTextColor="@color/colorPrimary"/>
 
 </LinearLayout>

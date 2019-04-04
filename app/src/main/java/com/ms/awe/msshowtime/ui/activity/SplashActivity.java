@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void startAnimation() {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1.0f);
-        alphaAnimation.setDuration(1500);
+        alphaAnimation.setDuration(1000);
         tvShowMessage.startAnimation(alphaAnimation);
         alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
