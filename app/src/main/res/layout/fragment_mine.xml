@@ -4,11 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/orange">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/mine"
-        android:textSize="20sp" />
+    <include layout="@layout/layout_top_bar"/>
 
 </RelativeLayout>

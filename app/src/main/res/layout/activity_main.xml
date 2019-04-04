@@ -15,7 +15,7 @@
         android:id="@+id/tabs_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/light_orange"
+        android:background="@color/main_color"
         app:tabSelectedTextColor="@color/colorPrimary"/>
 
 </LinearLayout>
