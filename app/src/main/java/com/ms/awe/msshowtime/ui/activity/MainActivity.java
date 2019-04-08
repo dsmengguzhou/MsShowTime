@@ -1,12 +1,13 @@
 package com.ms.awe.msshowtime.ui.activity;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ms.awe.msshowtime.R;
@@ -45,7 +46,6 @@ public class MainActivity extends BaseActivity {
         unbinder = ButterKnife.bind(this);
 
         initData();
-
         initTabs();
     }
 
@@ -55,12 +55,19 @@ public class MainActivity extends BaseActivity {
         ViewCompat.setElevation(tabsLayout, 10);
         //TabLayout与ViewPager绑定
         tabsLayout.setupWithViewPager(viewPager);
+
+        TypedArray ta = this.getResources().obtainTypedArray(R.array.selector_tabs);
+        int[] resIds = new int[4];
+
         for (int i = 0; i < fragmentList.size(); i++) {
             TabLayout.Tab itemTab = tabsLayout.getTabAt(i);
             if (itemTab != null) {
+                resIds[i] = ta.getResourceId(i,0);
                 itemTab.setCustomView(R.layout.item_tab_layout_custom);
-                TextView itemTv = (TextView) itemTab.getCustomView().findViewById(R.id.tv_menu_item);
+                TextView itemTv = (TextView) itemTab.getCustomView().findViewById(R.id.tv_tab_item);
+                ImageView itemIv = (ImageView)itemTab.getCustomView().findViewById(R.id.iv_tab_item);
                 itemTv.setText(tabTitles.get(i));
+                itemIv.setImageResource(resIds[i]);
             }
         }
         tabsLayout.getTabAt(0).getCustomView().setSelected(true);

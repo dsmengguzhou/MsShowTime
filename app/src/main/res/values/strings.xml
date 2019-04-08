@@ -18,5 +18,11 @@
 
     <string name="drug_store">药店</string>
 
+    <string-array name="selector_tabs">
+        <item>@drawable/selector_tab_home</item>
+        <item>@drawable/selector_tab_classify</item>
+        <item>@drawable/selector_tab_discover</item>
+        <item>@drawable/selector_tab_mine</item>
+    </string-array>
 
 </resources>
